@@ -19,12 +19,12 @@ async function localInstanceInjection() {
         button.classList = 'icon-button';
         button.title = `Open in ${localInstanceURL}`;
         button.style = 'font-size: 18px;';
-        button.innerHTML = `Open in ${localInstanceURL}`
+        button.textContent = `Open in ${localInstanceURL}`
         button.onclick = () => {
             const btn = document.getElementById('outside-instance-move-button');
             btn.disabled = true;
             btn.title = `Moving to ${localInstanceURL}, please wait!`
-            btn.innerHTML = `Moving to ${localInstanceURL}, please wait!`;
+            btn.textContent = `Moving to ${localInstanceURL}, please wait!`;
             btn.onclick = null;
             browser.runtime.sendMessage('move')
         }
