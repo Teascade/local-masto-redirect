@@ -2,12 +2,14 @@
 async function localInstanceInjection() {
     const hostname = location.hostname;
     console.log(browser.storage.sync.get("localInstanceURL"));
-    const localInstanceURL = (await browser.storage.sync.get("localInstanceURL")).localInstanceURL
-        || 'mastodon.social';
+    const localInstanceURL = (await browser.storage.sync.get("localInstanceURL"))
+        .localInstanceURL || 'mastodon.social';
     const masto = (document.getElementById('mastodon') ||
         document.getElementById('mastodon-svg-logo')) != null
     const pleroma = document.body.children?.[0]?.innerHTML?.includes('Pleroma');
-    const misskey = ['Calckey'].includes(document.querySelector('meta[name=application-name]')?.content)
+    /** @type {string | null} */
+    const misskey = document.querySelector('meta[name=application-name]')
+        ?.content?.toLowerCase()?.endsWith('key');
     if ((misskey || masto || pleroma) && location.host != localInstanceURL) {
         browser.runtime.sendMessage('confirmed')
 
