@@ -3,7 +3,7 @@ async function localInstanceInjection() {
     const hostname = location.hostname;
     console.log(browser.storage.sync.get("localInstanceURL"));
     const localInstanceURL = (await browser.storage.sync.get("localInstanceURL")).localInstanceURL
-        || 'piipitin.fi';
+        || 'mastodon.social';
     const masto = (document.getElementById('mastodon') ||
         document.getElementById('mastodon-svg-logo')) != null
     const pleroma = document.body.children?.[0]?.innerHTML?.includes('Pleroma');

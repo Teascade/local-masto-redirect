@@ -13,7 +13,7 @@ async function onMessage(message, details, asd) {
 
 async function move(tab) {
     const localInstanceURL = (await browser.storage.sync.get("localInstanceURL")).localInstanceURL
-        || 'piipitin.fi';
+        || 'mastodon.social';
     let status = {};
     try {
         let { statuses: [s] } = await (await fetch(`https://${localInstanceURL}/api/v2/search?q=${tab.url}&resolve=true&limit=5`)).json();

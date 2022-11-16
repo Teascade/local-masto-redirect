@@ -1,6 +1,6 @@
 "use strict";
 
-const defaultURL = 'piipitin.fi';
+const defaultURL = 'mastodon.social';
 
 function saveOptions(e) {
     e.preventDefault();
