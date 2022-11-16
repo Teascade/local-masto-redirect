@@ -7,6 +7,8 @@ a pageAction) to redirect you to your local instance's version of said post.
 Configure your instance's base hostname from the ugly options menu available in
 the Extensions-menu (accessed via Ctrl+Shift+A).
 
+*This AddOn is known to work at least on Mastodon version 4.0.2 and Pleroma version 2.4.3*
+
 ## Not battle tested
 There will be a lot of bugs in how the extension works, it has not been battle tested yet.
 
